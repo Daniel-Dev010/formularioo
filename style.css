@@ -8,9 +8,11 @@ background: url("fundo/background.jpg") no-repeat center center/cover;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+min-height:100dvh;
 margin:0;
+padding:20px;
 }
+
 
 /* camada escura por cima da imagem */
 body::before{
@@ -105,4 +107,10 @@ box-shadow:0 8px 20px rgba(0,0,0,0.35);
 text-align:center;
 margin-top:12px;
 font-size:14px;
+}
+
+@media (max-width: 400px){
+.container{
+width:100%;
+}
 }
