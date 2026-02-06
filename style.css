@@ -1,6 +1,10 @@
+*{
+box-sizing: border-box;
+}
+
 body{
 font-family: Arial, Helvetica, sans-serif;
-background: #f2f2f2;
+background: url("fundo/background.jpg") no-repeat center center/cover;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -8,48 +12,97 @@ height:100vh;
 margin:0;
 }
 
-.container{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-width:300px;
+/* camada escura por cima da imagem */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.35);
+backdrop-filter: blur(2px);
+z-index:-1;
 }
 
+/* FORMULÁRIO VIDRO */
+.container{
+width:340px;
+padding:30px;
+border-radius:18px;
+
+
+background: rgba(255,255,255,0.12);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+
+border:1px solid rgba(255,255,255,0.25);
+box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+color:white;
+
+
+}
+
+/* título */
 h2{
 text-align:center;
 margin-bottom:20px;
+font-size:18px;
+font-weight:500;
 }
 
+/* campos */
 input, textarea{
 width:100%;
-padding:10px;
+padding:12px;
 margin-bottom:12px;
-border:1px solid #ccc;
-border-radius:6px;
+border-radius:10px;
+
+
+border:1px solid rgba(255,255,255,0.25);
+background:rgba(255,255,255,0.15);
+color:white;
+
+outline:none;
 font-size:14px;
+
+
+}
+
+input::placeholder,
+textarea::placeholder{
+color:rgba(255,255,255,0.75);
 }
 
 textarea{
 resize:none;
-height:90px;
+height:95px;
 }
 
+/* botão */
 button{
 width:100%;
-padding:12px;
-background:#2b7cff;
-color:white;
+padding:13px;
 border:none;
-border-radius:6px;
+border-radius:12px;
 cursor:pointer;
 font-weight:bold;
+letter-spacing:0.5px;
+
+
+background: linear-gradient(135deg,#4facfe,#00f2fe);
+color:white;
+transition:0.25s;
+
+
 }
 
-button:hover
+button:hover{
+transform: translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,0.35);
+}
 
+/* status */
 #status{
 text-align:center;
-margin-top:10px;
+margin-top:12px;
 font-size:14px;
 }
