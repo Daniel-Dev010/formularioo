@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Biblioteca do EmailJS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("vZ2jQJK3hc8Vx-r-_");
+})();
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <form id="contact-form">
+        <h2>Entre em contato</h2>
+
+    <input type="text" name="name" placeholder="Digite seu Nome" required>
+
+    <textarea name="message" placeholder="o que precisa?" required></textarea>
+
+    <input type="tel" name="phone" placeholder="Seu telefone para contato" required>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<p id="status"></p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
